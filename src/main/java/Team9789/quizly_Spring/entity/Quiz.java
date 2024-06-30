@@ -1,8 +1,8 @@
 package Team9789.quizly_Spring.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Quiz {
@@ -27,4 +27,9 @@ public class Quiz {
     // 퀴즈 묶음 아이디
     @Column(name="quizzes_id")
     private Integer quizzesId;
+
+    // 하나의 퀴즈는 여러 선택지를 가질 수 있음 (1:N)
+    @OneToMany
+    @JoinColumn(name="option_id", nullable = false)
+    private List<Options> options;
 }
