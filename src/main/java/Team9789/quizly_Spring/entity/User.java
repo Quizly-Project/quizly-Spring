@@ -1,10 +1,14 @@
 package Team9789.quizly_Spring.entity;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Getter
+@Setter
 public class User {
 
     // 유저 아이디

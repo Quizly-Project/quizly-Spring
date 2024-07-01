@@ -1,12 +1,17 @@
 package Team9789.quizly_Spring.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Options {
 
     // 선택지 식별자
     @Id
+    @GeneratedValue
     @Column(name="option_id")
     private Integer optionId;
 

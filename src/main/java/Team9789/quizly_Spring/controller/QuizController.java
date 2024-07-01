@@ -1,13 +1,13 @@
 package Team9789.quizly_Spring.controller;
 
-import Team9789.quizly_Spring.dto.TestDto;
+import Team9789.quizly_Spring.dto.QuizDto;
 import Team9789.quizly_Spring.entity.Quiz;
 import Team9789.quizly_Spring.service.QuizService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.ArrayList;
+
 import java.util.List;
 
 @RestController
@@ -21,37 +21,34 @@ public class QuizController {
     // 퀴즈 묶음 목록 불러오기
     @GetMapping("")
     @ResponseBody
-    public ResponseEntity<List<Quiz>> getQuizList(String data, String data2) {
-        System.out.println("data = " + data);
-        System.out.println("data2 = " + data2);
-
+    public ResponseEntity<List<Quiz>> getQuizList() {
         //TODO: 퀴즈 목록을 DB에서 가져와야 함
-
-        List<Quiz> quizList = new ArrayList<>();
+        List<Quiz> quizList = quizService.getQuizList();
         return new ResponseEntity<List<Quiz>>(quizList, HttpStatus.OK);
     }
 
     // 특정 퀴즈 묶음 불러오기
     @GetMapping("/{quizId}")
     @ResponseBody
-    public ResponseEntity<Quiz> getQuizOne(@PathVariable Integer quizId, String data, String data2){
-        System.out.println("data = " + data);
-        System.out.println("data2 = " + data2);
-        System.out.println("quizId = " + quizId);
-
+    public ResponseEntity<Quiz> getQuizOne(@PathVariable Integer quizId){
         //TODO: 특정 퀴즈를 DB에서 가져와야 함
-
-        Quiz quiz = null;
+        Quiz quiz = quizService.getQuizOne(quizId);
         return new ResponseEntity<Quiz>(quiz, HttpStatus.OK);
     }
 
     // 퀴즈 묶음 추가
     @PostMapping("")
     @ResponseBody
-    public ResponseEntity<String> addQuiz(@RequestBody TestDto testDto){
-        System.out.println("testDto = " + testDto);
+    public ResponseEntity<String> addQuiz(@RequestBody QuizDto quizDto){
+        System.out.println("quizDto = " + quizDto);
+
+        Quiz quiz = new Quiz();
+        quiz.setQuizTitle(quizDto.getQuizTitle());
+        quiz.setQuizDescription(quizDto.getQuizDescription());
+        quiz.setQuizScore(quizDto.getQuizScore());
 
         //TODO: 특정 퀴즈를 등록해야 함
+        quizService.addQuiz(quiz);
 
         return new ResponseEntity<String>("Post Success", HttpStatus.OK);
     }
@@ -60,10 +57,8 @@ public class QuizController {
     @DeleteMapping("/{quizId}")
     @ResponseBody
     public ResponseEntity<String> deleteQuiz(@PathVariable Integer quizId){
-        System.out.println("quizId = " + quizId);
-
         //TODO: 특정 퀴즈를 삭제 (퀴즈 묶음에 포함된 모든 퀴즈도 삭제되어야 함)
-
+        quizService.deleteQuiz(quizId);
         return new ResponseEntity<String>("Delete Success", HttpStatus.OK);
     }
 }
