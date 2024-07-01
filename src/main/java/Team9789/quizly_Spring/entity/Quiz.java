@@ -23,9 +23,9 @@ public class Quiz {
     // 퀴즈 점수
     @Column(name="quiz_score")
     private Integer quizScore;
-
-    @ManyToOne
-    @JoinColumn(name="quizzes_id")
-    private Quizzes quizzes;
+//
+//    @ManyToOne
+//    @JoinColumn(name="quizzes_id")
+//    private Quizzes quizzess;
 
 }
