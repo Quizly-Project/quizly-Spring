@@ -24,12 +24,8 @@ public class Quiz {
     @Column(name="quiz_score")
     private Integer quizScore;
 
-    // 퀴즈 묶음 아이디
-    @Column(name="quizzes_id")
-    private Integer quizzesId;
+    @ManyToOne
+    @JoinColumn(name="quizzes_id")
+    private Quizzes quizzes;
 
-    // 하나의 퀴즈는 여러 선택지를 가질 수 있음 (1:N)
-    @OneToMany
-    @JoinColumn(name="option_id", nullable = false)
-    private List<Options> options;
 }

@@ -10,11 +10,15 @@ public class StudentResult {
     @Column(name="stu_num")
     private Integer stuNum;
 
-    // 참여한 방번호
-    @Column(name="room_num")
-    private Integer roomNum;
+//    // 참여한 방번호
+//    @Column(name="room_num")
+//    private Integer roomNum;
 
     // 학생 이름
     @Column(name="stu_name")
     private String stuName;
+
+    @ManyToOne
+    @JoinColumn(name="room_num")
+    private QuizRoom quizRoom;
 }

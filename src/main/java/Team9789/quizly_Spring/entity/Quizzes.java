@@ -9,16 +9,13 @@ public class Quizzes {
 
     // 퀴즈 식별자
     @Id
+    @GeneratedValue
     @Column(name="quizzes_id")
     private Integer quizzesId;
 
-    // 퀴즈 작성자
-    @Column(name="user_id")
-    private String userId;
-
-    // 하나의 퀴즈묶음은 여러 퀴즈를 가질 수 있음 (1:N)
-    @OneToMany
-    @JoinColumn(name="quiz_id", nullable = false)
-    private List<Quiz> quiz;
+    // 여러 퀴즈는 한 명의 선생님과 연결됨 (N:1)
+    @ManyToOne
+    @JoinColumn(name="user_id")
+    private User user;
 
 }
