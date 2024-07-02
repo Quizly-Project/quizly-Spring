@@ -62,13 +62,13 @@ public class SecurityConfig {
 
                                 CorsConfiguration configuration = new CorsConfiguration();
 
-                                configuration.setAllowedOrigins(Collections.singletonList("http://localhost:3000"));
-                                configuration.setAllowedMethods(Collections.singletonList("*"));
+                                configuration.addAllowedOriginPattern("*"); // 모든 도메인을 허용
+                                configuration.addAllowedMethod("*"); // 모든 HTTP 메서드를 허용
                                 configuration.setAllowCredentials(true);
-                                configuration.setAllowedHeaders(Collections.singletonList("*"));
+                                configuration.addAllowedHeader("*"); // 모든 헤더를 허용
                                 configuration.setMaxAge(3600L);
 
-                                configuration.setExposedHeaders(Collections.singletonList("Authorization"));
+                                configuration.addExposedHeader("Authorization");
 
                                 return configuration;
                             }
