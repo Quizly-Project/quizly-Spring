@@ -2,7 +2,7 @@ package Team9789.quizly_Spring.controller;
 
 import Team9789.quizly_Spring.entity.RefreshEntity;
 import Team9789.quizly_Spring.jwt.JWTUtil;
-import Team9789.quizly_Spring.respository.RefreshRepository;
+import Team9789.quizly_Spring.repository.RefreshRepository;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;

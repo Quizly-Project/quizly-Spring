@@ -3,10 +3,7 @@ package Team9789.quizly_Spring.service;
 import Team9789.quizly_Spring.dto.OptionDto;
 import Team9789.quizly_Spring.dto.QuizGroupDto;
 import Team9789.quizly_Spring.dto.QuizDto;
-import Team9789.quizly_Spring.entity.Quiz;
-import Team9789.quizly_Spring.entity.QuizGroup;
-import Team9789.quizly_Spring.entity.QuizOption;
-import Team9789.quizly_Spring.entity.User;
+import Team9789.quizly_Spring.entity.*;
 import Team9789.quizly_Spring.repository.QuizGroupRepository;
 import Team9789.quizly_Spring.repository.QuizOptionRepository;
 import Team9789.quizly_Spring.repository.QuizRepository;
@@ -45,7 +42,7 @@ public class QuizGroupService {
 
         System.out.println("quizGroupDto = " + quizGroupDto);
         QuizGroup quizGroup = new QuizGroup();
-        User user = userRepo.findById(quizGroupDto.getCreator()).orElse(null);
+        UserEntity user = userRepo.findByUsername(quizGroupDto.getCreator());
         quizGroup.setUser(user);
 
         // 퀴즈 그룹 생성 후 저장

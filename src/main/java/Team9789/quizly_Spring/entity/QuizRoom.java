@@ -23,7 +23,7 @@ public class QuizRoom {
 
     // 여러 방은 한 명의 선생님과 연결됨 (N:1)
     @ManyToOne
-    @JoinColumn(name="user_id")
-    private User user;
+    @JoinColumn(name="id")
+    private UserEntity user;
 
 }

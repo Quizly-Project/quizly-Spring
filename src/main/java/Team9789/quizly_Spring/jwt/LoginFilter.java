@@ -2,7 +2,7 @@ package Team9789.quizly_Spring.jwt;
 
 import Team9789.quizly_Spring.dto.LoginDTO;
 import Team9789.quizly_Spring.entity.RefreshEntity;
-import Team9789.quizly_Spring.respository.RefreshRepository;
+import Team9789.quizly_Spring.repository.RefreshRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.http.Cookie;

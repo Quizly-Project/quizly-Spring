@@ -1,6 +1,6 @@
 package Team9789.quizly_Spring.jwt;
 
-import Team9789.quizly_Spring.respository.RefreshRepository;
+import Team9789.quizly_Spring.repository.RefreshRepository;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

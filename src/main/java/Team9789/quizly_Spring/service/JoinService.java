@@ -2,7 +2,7 @@ package Team9789.quizly_Spring.service;
 
 import Team9789.quizly_Spring.dto.JoinDTO;
 import Team9789.quizly_Spring.entity.UserEntity;
-import Team9789.quizly_Spring.respository.UserRepository;
+import Team9789.quizly_Spring.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 

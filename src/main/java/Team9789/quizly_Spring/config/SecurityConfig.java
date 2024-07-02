@@ -4,7 +4,7 @@ import Team9789.quizly_Spring.jwt.CustomLogoutFilter;
 import Team9789.quizly_Spring.jwt.JWTFilter;
 import Team9789.quizly_Spring.jwt.JWTUtil;
 import Team9789.quizly_Spring.jwt.LoginFilter;
-import Team9789.quizly_Spring.respository.RefreshRepository;
+import Team9789.quizly_Spring.repository.RefreshRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -89,7 +89,8 @@ public class SecurityConfig {
         //경로별 인가 작업
         http
                 .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers("/login", "/", "/join").permitAll()
+//                        .requestMatchers("/login", "/", "/join").permitAll()
+                        .requestMatchers("/**").permitAll()
                         .requestMatchers("/admin").hasRole("ADMIN")
                         .requestMatchers("/reissue").permitAll()
                         .anyRequest().authenticated());

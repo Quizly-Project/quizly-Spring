@@ -32,8 +32,9 @@ public class QuizGroupController {
     @GetMapping("/{quizgroupId}")
     @ResponseBody
     public ResponseEntity<QuizGroup> getQuizzesOne(@PathVariable Integer quizgroupId){
+        System.out.println("quizgroupId = " + quizgroupId);
         //TODO: 특정 퀴즈 묶음을 DB에서 가져와야 함
-        QuizGroup quizGroup = quizGroupService.getQuizzesOne(quizgroupId);
+        QuizGroup quizGroup = null;//quizGroupService.getQuizzesOne(quizgroupId);
         return new ResponseEntity<QuizGroup>(quizGroup, HttpStatus.OK);
     }
 
