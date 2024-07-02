@@ -7,7 +7,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Options {
+public class QuizOption {
 
     // 선택지 식별자
     @Id
@@ -19,12 +19,15 @@ public class Options {
     @Column(name="option_text")
     private String optionText;
 
-    // 선택지 정답 여부 0 이면 거짓, 1이면 참
-    @Column(name="right_answer")
-    private Integer rightAnswer ;
+    @Column(name="order_num")
+    private Integer orderNum;
 
     @ManyToOne
     @JoinColumn(name="quiz_id")
     private Quiz quiz;
+
+    // 선택지 정답 여부 0 이면 거짓, 1이면 참
+//    @Column(name="right_answer")
+//    private Integer rightAnswer ;
 
 }
