@@ -1,0 +1,23 @@
+name: Deploy
+
+# Event : 실행되는 시점을 설명
+# main이라는 브렌치에 push가 되면 workflow가 실행된다.
+on:
+  push:
+    branches:
+      - main
+
+# Job : 실행되는 단위
+# 하나의 Workflow는 여러개의 Job을 가질 수 있다.
+# Job은 병렬로 실행된다.
+jobs:
+  # deploy라는 Job을 실행한다.
+  # job의 이름은 deploy
+    deploy:
+      # runs-on : 실행되는 환경을 설정한다.
+        runs-on: ubuntu-latest
+
+        # steps : job이 실행되는 과정을 설정한다.
+        # job이 실행되는 과정은 여러개의 step으로 나누어진다.
+        steps:
+        - name:

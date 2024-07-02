@@ -25,28 +25,47 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+
 	// https://mvnrepository.com/artifact/com.querydsl/querydsl-sql-spring
 	implementation group: 'com.querydsl', name: 'querydsl-sql-spring', version: '5.0.0'
 	// https://mvnrepository.com/artifact/com.querydsl/querydsl-apt
 	implementation group: 'com.querydsl', name: 'querydsl-apt', version: '5.0.0'
 
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '3.3.0'
+	//ModelMapper
+	implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.4.2'
 
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.mysql:mysql-connector-j'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	//Jwt
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+	implementation 'io.jsonwebtoken:jjwt-impl:0.12.3'
+	implementation 'io.jsonwebtoken:jjwt-jackson:0.12.3'
 
-	// JSON 파싱을 위한 의존성 추가
-	//implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
-
+	//Spring Dotenv
+	implementation 'me.paulschwarz:spring-dotenv:2.5.4'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+// .env 파일에서 환경 변수 로드
+def envProps = new Properties()
+file(".env").withInputStream { envProps.load(it) }
+envProps.each { key, value ->
+	project.ext.set(key, value)
 }
