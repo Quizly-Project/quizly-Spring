@@ -1,5 +1,6 @@
 package Team9789.quizly_Spring.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,8 +21,9 @@ public class QuizOption {
     private String optionText;
 
     @Column(name="order_num")
-    private Integer orderNum;
+    private Integer optionNum;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="quiz_id")
     private Quiz quiz;

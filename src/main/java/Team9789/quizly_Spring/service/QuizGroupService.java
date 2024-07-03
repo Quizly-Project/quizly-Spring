@@ -70,7 +70,7 @@ public class QuizGroupService {
                         QuizOption quizOption = new QuizOption();
                         quizOption.setQuiz(quiz);
                         quizOption.setOptionText(curr.getOptionText());
-                        quizOption.setOrderNum(curr.getOptionNum());
+                        quizOption.setOptionNum(curr.getOptionNum());
 
                         quizOptionRepo.save(quizOption);
                     }

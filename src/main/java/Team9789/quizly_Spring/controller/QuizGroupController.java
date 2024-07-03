@@ -63,7 +63,8 @@ public class QuizGroupController {
     // 퀴즈 묶음 삭제
     @DeleteMapping("/{quizgroupId}")
     @ResponseBody
-    public ResponseEntity<String> deleteQuizzes(@PathVariable Integer quizgroupId){
+    public ResponseEntity<String> deleteQuizzes(@PathVariable("quizgroupId") Integer quizgroupId){
+        System.out.println("quizgroupId aaaaaaaa= " + quizgroupId);
         //TODO: 특정 퀴즈 묶음 삭제 (퀴즈 묶음에 포함된 모든 퀴즈도 삭제되어야 함)
         quizGroupService.deleteQuizzes(quizgroupId);
         return new ResponseEntity<String>("Delete Success", HttpStatus.OK);
