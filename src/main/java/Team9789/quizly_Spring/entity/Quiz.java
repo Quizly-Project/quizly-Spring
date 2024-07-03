@@ -1,8 +1,12 @@
 package Team9789.quizly_Spring.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -33,8 +37,11 @@ public class Quiz {
     @Column(name="time")
     private Integer time;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="quiz_group")
     private QuizGroup quizgroup;
 
+    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
+    private List<QuizOption> options;
 }

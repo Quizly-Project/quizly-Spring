@@ -1,10 +1,20 @@
 package Team9789.quizly_Spring.service;
 
+import Team9789.quizly_Spring.dto.OptionDto;
+import Team9789.quizly_Spring.dto.QuizDto;
+import Team9789.quizly_Spring.dto.QuizPostDto;
 import Team9789.quizly_Spring.entity.Quiz;
+import Team9789.quizly_Spring.entity.QuizGroup;
+import Team9789.quizly_Spring.entity.QuizOption;
+import Team9789.quizly_Spring.entity.UserEntity;
+import Team9789.quizly_Spring.repository.QuizGroupRepository;
+import Team9789.quizly_Spring.repository.QuizOptionRepository;
 import Team9789.quizly_Spring.repository.QuizRepository;
+import Team9789.quizly_Spring.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -12,19 +22,65 @@ import java.util.List;
 public class QuizService {
 
     private final QuizRepository quizRepo;
+    private final QuizGroupRepository quizGroupRepo;
+    private final QuizOptionRepository quizOptionRepo;
+    private final UserRepository userRepo;
 
-    // TODO: 퀴즈 목록 가져오기 함수 제작
-    public List<Quiz> getQuizList() {
-        return (List<Quiz>)quizRepo.findAll();
-    }
+    // TODO: 특정 사용자 퀴즈 목록 가져오기
+//    public List<Quiz> getQuizListByUserName(String username) {
+//        UserEntity user = userRepo.findByUsername(username);
+//        return null;
+//    }
     // TODO: 퀴즈 하나 가져오기 함수 제작
-    public Quiz getQuizOne(Integer quizId) {
-        return quizRepo.findById(quizId).orElse(null);
+    public QuizDto getQuizOne(Integer quizId) {
+        Quiz quiz = quizRepo.findById(quizId).orElse(null);
+        System.out.println("quiz = " + quiz);
+        QuizDto quizDto = new QuizDto();
+        quizDto.setType(quiz.getType());
+        quizDto.setQuestion(quiz.getQuestion());
+        quizDto.setCorrectAnswer(quiz.getCorrectAnswer());
+        quizDto.setScore(quiz.getQuizScore());
+        quizDto.setTime(quiz.getTime());
 
+        if(quiz.getOptions() != null){
+            List<OptionDto> options = new ArrayList<>();
+            for(QuizOption option : quiz.getOptions()) {
+                OptionDto optionDto = new OptionDto();
+                optionDto.setOptionNum(option.getOptionNum());
+                optionDto.setOptionText(option.getOptionText());
+                options.add(optionDto);
+            }
+            quizDto.setOptions(options);
+        }
+
+        return quizDto;
     }
     // TODO: 퀴즈 등록하기
-    public void addQuiz(Quiz quiz) {
-        quizRepo.save(quiz);
+    public void addQuiz(QuizPostDto quizPostDto) {
+
+        QuizGroup quizGroup = (QuizGroup)quizGroupRepo.findById(quizPostDto.getQuizgroup()).orElse(null);
+
+        Quiz quiz = new Quiz();
+        quiz.setQuizgroup(quizGroup);
+        quiz.setType(quizPostDto.getQuiz().getType());
+        quiz.setQuestion(quizPostDto.getQuiz().getQuestion());
+        quiz.setCorrectAnswer(quizPostDto.getQuiz().getCorrectAnswer());
+        quiz.setQuizScore(quizPostDto.getQuiz().getScore());
+        quiz.setTime(quizPostDto.getQuiz().getTime());
+
+        quiz = quizRepo.save(quiz);
+        System.out.println("quiz = " + quiz);
+        if(quizPostDto.getQuiz().getOptions() != null) {
+            List<QuizOption> options = new ArrayList<>();
+            for(OptionDto optionDto : quizPostDto.getQuiz().getOptions()) {
+                QuizOption option = new QuizOption();
+                option.setOptionNum(optionDto.getOptionNum());
+                option.setOptionText(optionDto.getOptionText());
+                option.setQuiz(quiz);
+                options.add(option);
+                quizOptionRepo.save(option);
+            }
+        }
     }
     // TODO: 퀴즈 수정하기
     public void updateQuiz(Quiz quiz) {

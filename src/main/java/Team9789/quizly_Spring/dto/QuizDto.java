@@ -20,7 +20,4 @@ public class QuizDto {
 
     private List<OptionDto> options;
 
-
-
-
 }

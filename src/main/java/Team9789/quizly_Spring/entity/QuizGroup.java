@@ -11,6 +11,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@ToString
 public class QuizGroup {
 
     // 퀴즈 식별자
@@ -32,7 +33,7 @@ public class QuizGroup {
     @JoinColumn(name="id")
     private UserEntity user;
 
-//    @OneToMany(mappedBy="quizgroup")
-//    private List<Quiz> quizs = new ArrayList<>();
+    @OneToMany(mappedBy="quizgroup", cascade = CascadeType.ALL)
+    private List<Quiz> quizs = new ArrayList<>();
 
 }
