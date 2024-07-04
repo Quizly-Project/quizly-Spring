@@ -69,4 +69,13 @@ public class QuizGroupController {
         quizGroupService.deleteQuizzes(quizgroupId);
         return new ResponseEntity<String>("Delete Success", HttpStatus.OK);
     }
+
+    //nest로 퀴즈 묶음 보내기
+    @GetMapping("/send/{quizgroupId}")
+    @ResponseBody
+    public ResponseEntity<QuizGroupDto> getQuizGroup(@PathVariable("quizgroupId") Integer quizgroupId) {
+        System.out.println("====== quiz Group 전송!!! ========");
+        QuizGroupDto quizGroup = quizGroupService.getQuizGroup(quizgroupId);
+        return ResponseEntity.ok(quizGroup);
+    }
 }

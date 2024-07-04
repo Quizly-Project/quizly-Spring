@@ -8,6 +8,8 @@ import java.util.List;
 @Data
 public class QuizDto {
 
+    private Integer quizId;
+
     private Integer type;
 
     private String question;
