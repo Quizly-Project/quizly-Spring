@@ -3,10 +3,13 @@ package Team9789.quizly_Spring.controller;
 import Team9789.quizly_Spring.dto.QuizDto;
 import Team9789.quizly_Spring.dto.QuizPostDto;
 import Team9789.quizly_Spring.entity.Quiz;
+import Team9789.quizly_Spring.entity.QuizRoom;
+import Team9789.quizly_Spring.entity.StudentResult;
 import Team9789.quizly_Spring.service.QuizService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -19,6 +22,8 @@ public class QuizController {
 
     // 퀴즈 서비스 의존성 주입
     private final QuizService quizService;
+
+
 
     // 퀴즈 모두 불러오기
     @GetMapping("/user/{username}")

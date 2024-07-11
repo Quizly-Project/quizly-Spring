@@ -26,4 +26,6 @@ public class QuizRoom {
     @JoinColumn(name="id")
     private UserEntity user;
 
+
+
 }
