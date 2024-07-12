@@ -44,4 +44,6 @@ public class Quiz {
 
     @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
     private List<QuizOption> options;
+
+
 }

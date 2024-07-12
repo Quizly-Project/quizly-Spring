@@ -22,4 +22,9 @@ public class StudentResult {
     @ManyToOne
     @JoinColumn(name="room_num")
     private QuizRoom quizRoom;
+
+
+
+
+
 }
