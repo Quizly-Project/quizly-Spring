@@ -12,7 +12,7 @@ public class QuizOption {
 
     // 선택지 식별자
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="option_id")
     private Integer optionId;
 

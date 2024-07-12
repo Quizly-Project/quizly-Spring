@@ -5,7 +5,9 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class RoomAnswersDto {
+public class StudentResultDto {
+
+    private Integer quizGroupId;
 
     private String nickName;
 
@@ -14,5 +16,4 @@ public class RoomAnswersDto {
     private List<String> result;
 
     private Integer totalScore;
-
 }

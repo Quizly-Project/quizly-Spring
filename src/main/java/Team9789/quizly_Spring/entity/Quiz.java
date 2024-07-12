@@ -15,7 +15,7 @@ public class Quiz {
 
     // 문제 식별자
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="quiz_id")
     private Integer quizId;
 

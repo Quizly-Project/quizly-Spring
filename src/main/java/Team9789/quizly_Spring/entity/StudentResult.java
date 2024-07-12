@@ -11,17 +11,27 @@ public class StudentResult {
 
     // 학생 식별자
     @Id
-    @GeneratedValue
-    @Column(name="stu_num")
-    private Integer stuNum;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="stu_id")
+    private Integer stuId;
 
-    // 학생 이름
-    @Column(name="stu_name")
-    private String stuName;
+    @Column(name="quizgroup_id")
+    private Integer quizGroupId;
 
-    @ManyToOne
-    @JoinColumn(name="room_num")
-    private QuizRoom quizRoom;
+    @Column(name="nickname")
+    private String nickName;
+
+    @Column(name="roomcode")
+    private String roomCode;
+
+    @Column(name="select_option")
+    private String selectOption;
+
+    @Column(name="result")
+    private String result;
+
+    @Column(name="total_score")
+    private Integer totalScore;
 
 
 

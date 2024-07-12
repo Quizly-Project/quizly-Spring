@@ -13,7 +13,7 @@ import java.util.List;
 public class QuizRoom {
     // 방번호
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="room_num")
     private Integer roomNum;
 

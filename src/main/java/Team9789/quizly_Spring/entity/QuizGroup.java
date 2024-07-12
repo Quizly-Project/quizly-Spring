@@ -16,7 +16,7 @@ public class QuizGroup {
 
     // 퀴즈 식별자
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="quiz_group")
     private Integer quizGroup;
 
