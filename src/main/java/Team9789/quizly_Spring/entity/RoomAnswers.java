@@ -33,7 +33,7 @@ public class RoomAnswers {
 
     //    @Column(name="room_num")
 //    private Integer roomNum;
-    @Column(name="result_ox")
+    @Column(name="result")
     private String result;
 
 

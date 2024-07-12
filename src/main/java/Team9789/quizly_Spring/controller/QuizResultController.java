@@ -9,6 +9,8 @@ import Team9789.quizly_Spring.service.QuizResultService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 @RestController
@@ -54,5 +56,18 @@ public class QuizResultController {
     public QuizResult PostQuizResult(@PathVariable("quizId") Integer quizId)
     {
         return quizResultService.getQuizResultById(quizId);
+    }
+
+    @PostMapping("/quiz/{quizId}")
+    public String PostQuizResult(@PathVariable("quizId") String quizId, @RequestBody String answers)
+    {
+        System.out.println("quizId = " + quizId);
+        System.out.println("통신 성공");
+        String result = URLDecoder.decode(answers, StandardCharsets.UTF_8);
+        System.out.println("answers = " + answers);
+        System.out.println("result = " + result);
+
+//        quizResultService.saveRoomAnswers();
+        return quizId;
     }
 }

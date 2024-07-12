@@ -35,16 +35,17 @@ public class QuizResultService {
         return quizResultRepository.save(quizResult);
     }
 
-    public RoomAnswers saveRoomAnswers(RoomAnswersDto roomAnswersDto) {
-        //
-        RoomAnswers answers = new RoomAnswers();
+//    public RoomAnswers saveRoomAnswers(Integer quizId, String ) {
+////        //
+////        RoomAnswers answers = new RoomAnswers();
+////
+////        //answers.setQuizId(roomAnswersDto);
+////        answers.setSelectOption(roomAnswersDto.getSelectOption());
+////        answers.setResult(roomAnswersDto.getResult());
+////        answers.setTotalScore(roomAnswersDto.getTotalScore());
+//
+//        return roomAnswersRepository.save(answers);
+//    }
 
-        //answers.setQuizId(roomAnswersDto);
-        answers.setSelectOption(roomAnswersDto.getSelectOption());
-        answers.setResult(roomAnswersDto.getResult());
-        answers.setTotalScore(roomAnswersDto.getTotalScore());
-
-        return roomAnswersRepository.save(answers);
-    }
 
 }
