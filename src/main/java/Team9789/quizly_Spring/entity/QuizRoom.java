@@ -13,7 +13,7 @@ import java.util.List;
 public class QuizRoom {
     // 방번호
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="room_num")
     private Integer roomNum;
 
@@ -25,5 +25,7 @@ public class QuizRoom {
     @ManyToOne
     @JoinColumn(name="id")
     private UserEntity user;
+
+
 
 }

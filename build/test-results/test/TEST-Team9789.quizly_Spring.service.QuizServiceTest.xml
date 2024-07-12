@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Team9789.quizly_Spring.service.QuizServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-08T13:49:28" hostname="YOO-MacBook-Pro.local" time="0.001">
+  <properties/>
+  <testcase name="addQuiz()" classname="Team9789.quizly_Spring.service.QuizServiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

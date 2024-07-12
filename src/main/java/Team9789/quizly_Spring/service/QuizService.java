@@ -3,14 +3,8 @@ package Team9789.quizly_Spring.service;
 import Team9789.quizly_Spring.dto.OptionDto;
 import Team9789.quizly_Spring.dto.QuizDto;
 import Team9789.quizly_Spring.dto.QuizPostDto;
-import Team9789.quizly_Spring.entity.Quiz;
-import Team9789.quizly_Spring.entity.QuizGroup;
-import Team9789.quizly_Spring.entity.QuizOption;
-import Team9789.quizly_Spring.entity.UserEntity;
-import Team9789.quizly_Spring.repository.QuizGroupRepository;
-import Team9789.quizly_Spring.repository.QuizOptionRepository;
-import Team9789.quizly_Spring.repository.QuizRepository;
-import Team9789.quizly_Spring.repository.UserRepository;
+import Team9789.quizly_Spring.entity.*;
+import Team9789.quizly_Spring.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,11 +20,13 @@ public class QuizService {
     private final QuizOptionRepository quizOptionRepo;
     private final UserRepository userRepo;
 
-    // TODO: 특정 사용자 퀴즈 목록 가져오기
-//    public List<Quiz> getQuizListByUserName(String username) {
-//        UserEntity user = userRepo.findByUsername(username);
-//        return null;
-//    }
+
+    public Quiz getQuizById(Integer quizId)
+    {
+        return quizRepo.findById(quizId).orElse(null);
+    }
+
+
     // TODO: 퀴즈 하나 가져오기 함수 제작
     public QuizDto getQuizOne(Integer quizId) {
         Quiz quiz = quizRepo.findById(quizId).orElse(null);
