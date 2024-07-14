@@ -1,6 +1,5 @@
 package Team9789.quizly_Spring.controller;
 
-import Team9789.quizly_Spring.dto.RoomAnswersDto;
 import Team9789.quizly_Spring.dto.StudentResultDto;
 import Team9789.quizly_Spring.entity.StudentResult;
 import Team9789.quizly_Spring.service.StudentResultService;

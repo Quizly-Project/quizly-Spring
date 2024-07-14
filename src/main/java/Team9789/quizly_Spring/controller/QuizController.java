@@ -23,20 +23,6 @@ public class QuizController {
     // 퀴즈 서비스 의존성 주입
     private final QuizService quizService;
 
-
-
-    // 퀴즈 모두 불러오기
-    @GetMapping("/user/{username}")
-    @ResponseBody
-    public ResponseEntity<List<Quiz>> getQuizList(@PathVariable("username") String username){
-
-        //TODO: 퀴즈 목록을 DB에서 가져와야 함
-        //quizService.getQuizListByUserName(username);
-        List<Quiz> quizList = new ArrayList<>();
-
-        return new ResponseEntity<List<Quiz>>(quizList, HttpStatus.OK);
-    }
-
     // 특정 퀴즈 묶음 불러오기
     @GetMapping("/{quizId}")
     @ResponseBody

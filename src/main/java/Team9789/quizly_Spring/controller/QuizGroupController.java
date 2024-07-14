@@ -18,6 +18,13 @@ public class QuizGroupController {
     // 퀴즈 묶음 서비스 의존성 주입
     private final QuizGroupService quizGroupService;
 
+    // 특정 유저가 등록한 퀴즈 묶음 목록을 가져온다.
+    @GetMapping("/user/{username}")
+    public List<QuizGroup> getQuizzesListByUserName(@PathVariable("username") String username) {
+        //TODO: JWT 토큰에서 username을 가져와서 처리하도록 해야 함
+        return quizGroupService.getQuizGroupsByUser(username);
+    }
+
     // 퀴즈 묶음 목록 불러오기
     @GetMapping("")
     @ResponseBody

@@ -27,6 +27,10 @@ public class QuizGroupService {
     private final QuizRepository quizRepo;
 
 
+    public List<QuizGroup> getQuizGroupsByUser(String username) {
+        return quizGroupRepo.findAllByUser_Username(username);
+    }
+
     // TODO: 퀴즈 묶음 목록 가져오기 함수 제작
     public List<QuizGroup> getQuizzesList() {
         return (List<QuizGroup>) quizGroupRepo.findAll();

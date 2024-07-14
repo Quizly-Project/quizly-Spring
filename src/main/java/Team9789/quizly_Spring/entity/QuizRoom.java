@@ -28,7 +28,7 @@ public class QuizRoom {
     @JoinColumn(name="id")
     private UserEntity user;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<StudentResult> studentResults = new ArrayList<>();
 
 }

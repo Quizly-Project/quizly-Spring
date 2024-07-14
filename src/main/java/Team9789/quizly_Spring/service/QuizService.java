@@ -20,13 +20,6 @@ public class QuizService {
     private final QuizOptionRepository quizOptionRepo;
     private final UserRepository userRepo;
 
-
-    public Quiz getQuizById(Integer quizId)
-    {
-        return quizRepo.findById(quizId).orElse(null);
-    }
-
-
     // TODO: 퀴즈 하나 가져오기 함수 제작
     public QuizDto getQuizOne(Integer quizId) {
         Quiz quiz = quizRepo.findById(quizId).orElse(null);
