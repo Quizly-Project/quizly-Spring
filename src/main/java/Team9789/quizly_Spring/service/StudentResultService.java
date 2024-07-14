@@ -28,8 +28,6 @@ public class StudentResultService {
             studentResult.setQuizGroupId(answer.getQuizGroupId());
             studentResult.setNickName(answer.getNickName());
             studentResult.setRoomCode(roomCode);
-            String selectOption = "selectOption : " + Arrays.toString(answer.getSelectOption().toArray());
-            String result = "result : " + Arrays.toString(answer.getResult().toArray());
             studentResult.setSelectOption(Arrays.toString(answer.getSelectOption().toArray()));
             studentResult.setResult(Arrays.toString(answer.getResult().toArray()));
             studentResult.setTotalScore(answer.getTotalScore());

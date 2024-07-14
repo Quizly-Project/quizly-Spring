@@ -70,8 +70,7 @@ public class SecurityConfig {
                                 configuration.setAllowCredentials(true);
                                 configuration.addAllowedHeader("*"); // 모든 헤더를 허용
                                 configuration.setMaxAge(3600L);
-
-                                configuration.addExposedHeader("Authorization");
+                                configuration.addExposedHeader("access");
 
                                 return configuration;
                             }
