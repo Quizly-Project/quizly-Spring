@@ -12,6 +12,7 @@
 *.iml
 *.iws
 *.ipr
+out/
 
 # Gradle files
 .gradle
@@ -27,3 +28,6 @@ build/
 
 # Environment variables
 .env
+
+# Properties files
+src/main/resources/env.properties
