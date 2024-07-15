@@ -1,5 +1,5 @@
 # Package files
-*.jar
+# *.jar  # 이 라인을 주석 처리하거나 제거
 *.war
 *.nar
 *.ear
@@ -14,9 +14,11 @@
 *.ipr
 out/
 
-# Gradle files
+Copy# Gradle files
 .gradle
 build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
 
 # Compiled class files
 *.class
