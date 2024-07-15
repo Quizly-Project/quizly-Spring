@@ -16,7 +16,7 @@ spring:
       ddl-auto: update
 
   jwt:
-    secret: vmfhaltmskdlstkfkdgodyroqkfwkdbalroqkfwkdbalaaaaaaaaaaaaaaaabbbbb
+    secret: ${JWT_SECRET}
 
   thymeleaf:
     cache: false
