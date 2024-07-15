@@ -30,4 +30,7 @@ build/
 .env
 
 # Properties files
-src/main/resources/env.properties
+src/main/resources/properties/env.properties
+
+## MAC OS ###
+.DS_Store
