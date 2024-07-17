@@ -51,14 +51,6 @@ public class QuizGroupController {
     public ResponseEntity<String> addQuizzes(@RequestBody QuizGroupDto quizGroupDto){
         System.out.println("---------------컨트롤러 호출---------------");
         System.out.println("quizzesDto = " + quizGroupDto);
-        quizGroupDto.getQuizzes().forEach(quizsDto -> {
-            System.out.println("quizsDto = " + quizsDto);
-            if(quizsDto.getType() == 2) {
-                quizsDto.getOptions().forEach(optionDto -> {
-                    System.out.println("optionDto = " + optionDto);
-                });
-            }
-        });
         //TODO: 특정 퀴즈 묶음을 등록해야 함
 
         System.out.println("---------------컨트롤러 -> 서비스---------------");
