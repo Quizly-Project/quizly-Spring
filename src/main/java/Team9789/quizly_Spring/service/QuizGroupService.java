@@ -67,6 +67,7 @@ public class QuizGroupService {
                 quiz.setCorrectAnswer(quizDto.getCorrectAnswer());
                 quiz.setQuizScore(quizDto.getScore());
                 quiz.setTime(quizDto.getTime());
+                quiz.setExplanation(quizDto.getExplanation());
 
                 quiz = quizRepo.save(quiz);
 
