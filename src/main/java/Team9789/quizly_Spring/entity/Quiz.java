@@ -29,6 +29,9 @@ public class Quiz {
     @Column(name="correct_answer")
     private String correctAnswer;
 
+    @Column(name="explanation")
+    private String explanation;
+
     // 퀴즈 점수
     @Column(name="quiz_score")
     private Integer quizScore;

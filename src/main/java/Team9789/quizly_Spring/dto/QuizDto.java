@@ -16,6 +16,8 @@ public class QuizDto {
 
     private String correctAnswer;
 
+    private String explanation;
+
     private Integer score;
 
     private Integer time;
