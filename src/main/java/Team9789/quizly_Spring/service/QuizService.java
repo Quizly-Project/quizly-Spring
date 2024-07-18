@@ -30,6 +30,7 @@ public class QuizService {
         quizDto.setCorrectAnswer(quiz.getCorrectAnswer());
         quizDto.setScore(quiz.getQuizScore());
         quizDto.setTime(quiz.getTime());
+        quizDto.setExplanation(quiz.getExplanation());
 
         if(quiz.getOptions() != null){
             List<OptionDto> options = new ArrayList<>();
@@ -56,6 +57,7 @@ public class QuizService {
         quiz.setCorrectAnswer(quizPostDto.getQuiz().getCorrectAnswer());
         quiz.setQuizScore(quizPostDto.getQuiz().getScore());
         quiz.setTime(quizPostDto.getQuiz().getTime());
+        quiz.setExplanation(quizPostDto.getQuiz().getExplanation());
 
         quiz = quizRepo.save(quiz);
         System.out.println("quiz = " + quiz);
