@@ -37,10 +37,10 @@ Quizly는 3D 환경에서 실시간 상호작용을 통해 즐겁고 효과적�
 ### 설치
 
 ```bash
-$ git clone https://github.com/Quizly-Project/quizly-Nest.git
-$ cd quizly-Nest
-$ npm install
-$ npm run start
+$ git clone https://github.com/Quizly-Project/quizly-Spring.git
+$ cd quizly-Spring
+$ ./gradlew clean build
+$ java -jar build/libs/quizly-Spring-0.0.1-SNAPSHOT.jar
 ```
 
 ---
