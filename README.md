@@ -19,8 +19,8 @@
 ## 프로젝트 설명 포스터!
 
 
-<img alt="Quizly Project Poster" src="<img width="5100" alt="quizly_poster" src="https://github.com/user-attachments/assets/9fa20449-2ace-482d-8a38-34db8d4dd197">
-">
+<img width="5100" alt="quizly_poster" src="https://github.com/user-attachments/assets/9fa20449-2ace-482d-8a38-34db8d4dd197">
+
 
 ## 팀 소개
 
