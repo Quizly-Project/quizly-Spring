@@ -1,9 +1,11 @@
 # Quizly-Spring
 
 <div align="center">
-<img width="329" alt="Quizly Logo" src="https://github.com/Quizly-Project/.github/raw/main/profile/img/logo.png">
+<!-- <img width="329" alt="Quizly Logo" src="https://github.com/Quizly-Project/.github/raw/main/profile/img/logo.png"> -->
 
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FQuizly-Project%2Fquizly-frontend&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Quizly&fontSize=50&animation=twinkling&text-color=black)
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/Quizly-Project/quizly-Spring&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 </div>
 
@@ -14,7 +16,7 @@
 
 ## 프로젝트 소개 영상
 
-[![Quizly 프로젝트 소개 영상](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
+[![Quizly 프로젝트 소개 영상](https://img.youtube.com/vi/sUz-6YQ4_yQ/0.jpg)](https://youtu.be/sUz-6YQ4_yQ)
 
 ## 프로젝트 설명 포스터!
 
