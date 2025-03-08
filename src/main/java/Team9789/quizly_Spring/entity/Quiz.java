@@ -1,52 +1,48 @@
 package Team9789.quizly_Spring.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "quiz")
 @Getter
-@Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Quiz {
 
-    // 문제 식별자
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="quiz_id")
-    private Integer quizId;
+    @GeneratedValue
+    @Column(name = "quiz_id")
+    private Long id;
 
-    @Column(name="type")
-    private Integer type;
-    // 문제
-    @Column(name="question")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="quiz_group_id")
+    private QuizGroup quizGroup;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "quiz_type_id")
+    private QuizType quizType;
+
+    @Column(name = "question")
     private String question;
 
-    // 퀴즈 답
-    @Column(name="correct_answer")
+    @Column(name = "correct_answer")
     private String correctAnswer;
 
-    @Column(name="explanation")
+    @Column(name = "explanation")
     private String explanation;
 
-    // 퀴즈 점수
-    @Column(name="quiz_score")
+    @Column(name = "quiz_score")
     private Integer quizScore;
 
-    // 퀴즈 시간
-    @Column(name="time")
-    private Integer time;
+    @Column(name = "reg_date")
+    private LocalDateTime regDate;
 
-    @JsonBackReference
-    @ManyToOne
-    @JoinColumn(name="quiz_group")
-    private QuizGroup quizgroup;
-
-    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
-    private List<QuizOption> options;
-
-
+    @OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<QuizOption> quizOptionList = new ArrayList<>();
 }

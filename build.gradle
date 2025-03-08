@@ -9,7 +9,7 @@ version = '0.0.1-SNAPSHOT'
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
+		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
 
@@ -40,12 +40,15 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	runtimeOnly 'com.mysql:mysql-connector-j'
+//	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+//	runtimeOnly 'com.mysql:mysql-connector-j'
 
+	// 개발을 위해 h2 데이터베이스 사용
+	runtimeOnly 'com.h2database:h2'
 
 	// https://mvnrepository.com/artifact/com.querydsl/querydsl-sql-spring
 	implementation group: 'com.querydsl', name: 'querydsl-sql-spring', version: '5.0.0'
+
 	// https://mvnrepository.com/artifact/com.querydsl/querydsl-apt
 	implementation group: 'com.querydsl', name: 'querydsl-apt', version: '5.0.0'
 
@@ -59,9 +62,17 @@ dependencies {
 
 
 	// Other dependencies
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
 
-	// JUnit 5
-	testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
+	// 캐시도 없애주고, 리로딩 되도록 해줌(더 많은 기능 제공)
+	implementation 'org.springframework.boot:spring-boot-devtools'
+
+	//JUnit4 추가
+	testImplementation("org.junit.vintage:junit-vintage-engine") {
+		exclude group: "org.hamcrest", module: "hamcrest-core"
+	}
+
+
 
 	// Mockito
 	testImplementation 'org.mockito:mockito-core:3.9.0'

@@ -1,34 +1,34 @@
 package Team9789.quizly_Spring.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.annotations.UpdateTimestamp;
-import org.springframework.data.annotation.CreatedDate;
+import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "quiz_room")
 @Getter
-@Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class QuizRoom {
-    // 방 코드
+
     @Id
-    @Column(name="room_id")
-    private String roomId;
+    @GeneratedValue
+    @Column(name = "room_id")
+    private Long id;
 
-    @UpdateTimestamp
-    @Column(name="reg_date")
-    private Date regDate;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    private UserEntity userEntity;
 
-    // 여러 방은 한 명의 선생님과 연결됨 (N:1)
-    @ManyToOne
-    @JoinColumn(name="id")
-    private UserEntity user;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "quiz_group_id")
+    private QuizGroup quizGroup;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<StudentResult> studentResults = new ArrayList<>();
+    @Column(name = "room_code")
+    private String roomCode;
 
+    @Column(name = "reg_date")
+    private LocalDateTime regDate;
 }

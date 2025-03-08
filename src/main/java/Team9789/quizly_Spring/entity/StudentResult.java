@@ -1,39 +1,36 @@
 package Team9789.quizly_Spring.entity;
 
+import ch.qos.logback.classic.model.RootLoggerModel;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "student_result")
 @Getter
-@Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class StudentResult {
 
-    // 학생 식별자
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="stu_id")
-    private Integer stuId;
+    @GeneratedValue
+    @Column(name = "stu_id")
+    private Long id;
 
-    @Column(name="quizgroup_id")
-    private Integer quizGroupId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "rood_id")
+    private QuizRoom quizRoom;
 
-    @Column(name="nickname")
-    private String nickName;
+    @Column(name = "nickname")
+    private String nickname;
 
-    @Column(name="roomcode")
-    private String roomCode;
-
-    @Column(name="select_option")
+    @Column(name = "select_option")
     private String selectOption;
 
-    @Column(name="result")
+    @Column(name = "result")
     private String result;
 
-    @Column(name="total_score")
+    @Column(name = "total_score")
     private Integer totalScore;
-
-
-
 
 }

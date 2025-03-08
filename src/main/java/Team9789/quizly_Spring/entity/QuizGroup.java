@@ -1,39 +1,41 @@
 package Team9789.quizly_Spring.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.NoArgsConstructor;
+import org.apache.catalina.User;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name="quiz_group")
 @Getter
-@Setter
-@ToString
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class QuizGroup {
 
-    // 퀴즈 식별자
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="quiz_group")
-    private Integer quizGroup;
+    @GeneratedValue
+    @Column(name = "quiz_group_id")
+    private Long id;
 
-    // 퀴즈 그룹 제목
-    @Column(name="quiz_title")
+    // 퀴즈 제작 유저
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    private UserEntity userEntity;
+
+    // 퀴즈 묶음 제목
+    @Column(name = "quiz_title")
     private String quizTitle;
 
-    // 퀴즈 그룹 설명
-    @Column(name="quiz_description")
-    private String quizDescription;
+    // 퀴즈 묶음 설명
+    @Column(name="quiz_group_description")
+    private String quizGroupDescription;
 
-    // 여러 퀴즈는 한 명의 선생님과 연결됨 (N:1)
-    @ManyToOne
-    @JoinColumn(name="id")
-    private UserEntity user;
-
-    @OneToMany(mappedBy="quizgroup", cascade = CascadeType.ALL)
-    private List<Quiz> quizs = new ArrayList<>();
+    // 퀴즈 목록
+    @OneToMany(mappedBy = "quizGroup", cascade = CascadeType.ALL)
+    private List<Quiz> quizList = new ArrayList<>();
 
 }
