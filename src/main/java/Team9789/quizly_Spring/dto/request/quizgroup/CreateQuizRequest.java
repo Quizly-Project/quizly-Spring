@@ -1,11 +1,10 @@
-package Team9789.quizly_Spring.dto.request;
+package Team9789.quizly_Spring.dto.request.quizgroup;
 
 import Team9789.quizly_Spring.entity.QuizType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 

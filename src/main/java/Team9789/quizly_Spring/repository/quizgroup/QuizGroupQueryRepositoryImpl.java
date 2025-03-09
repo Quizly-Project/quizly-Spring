@@ -1,4 +1,4 @@
-package Team9789.quizly_Spring.repository.query;
+package Team9789.quizly_Spring.repository.quizgroup;
 
 import Team9789.quizly_Spring.entity.Quiz;
 import Team9789.quizly_Spring.entity.QuizGroup;

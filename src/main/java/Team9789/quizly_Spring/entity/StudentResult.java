@@ -5,6 +5,8 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "student_result")
 @Getter
@@ -16,8 +18,9 @@ public class StudentResult {
     @Column(name = "stu_id")
     private Long id;
 
-    @OneToOne(mappedBy = "studentResult", fetch = FetchType.LAZY)
-    private QuizRoom quizRoom;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "quiz_result_id")
+    private QuizResult quizResult;
 
     @Column(name = "nickname")
     private String nickname;
@@ -30,5 +33,24 @@ public class StudentResult {
 
     @Column(name = "total_score")
     private Integer totalScore;
+
+    protected StudentResult(String nickname, String selectOption, String result, Integer totalScore) {
+        this.nickname = nickname;
+        this.selectOption = selectOption;
+        this.result = result;
+        this.totalScore = totalScore;
+    }
+
+    //== 연관 관계 편의 메서드 ==//
+    public void changeQuizResult(QuizResult quizResult) {
+        this.quizResult = quizResult;
+    }
+
+    //== 생성 메서드 ==//
+    public static StudentResult createStudentResult(String nickname, String selectOption, String result, Integer totalScore) {
+        return new StudentResult(nickname, selectOption, result, totalScore);
+
+    }
+
 
 }

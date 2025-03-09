@@ -1,9 +1,9 @@
-package Team9789.quizly_Spring.service;
+package Team9789.quizly_Spring.service.quizgroup;
 
 import Team9789.quizly_Spring.dto.QuizGroupDto;
 import Team9789.quizly_Spring.dto.UserDto;
-import Team9789.quizly_Spring.dto.request.CreateQuizGroupRequest;
-import Team9789.quizly_Spring.dto.request.UpdateQuizGroupRequest;
+import Team9789.quizly_Spring.dto.request.quizgroup.CreateQuizGroupRequest;
+import Team9789.quizly_Spring.dto.request.quizgroup.UpdateQuizGroupRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

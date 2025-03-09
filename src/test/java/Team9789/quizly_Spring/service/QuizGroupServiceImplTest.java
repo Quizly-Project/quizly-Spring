@@ -2,11 +2,11 @@ package Team9789.quizly_Spring.service;
 
 import Team9789.quizly_Spring.dto.QuizGroupDto;
 import Team9789.quizly_Spring.dto.UserDto;
-import Team9789.quizly_Spring.dto.request.*;
-import Team9789.quizly_Spring.entity.QuizGroup;
+import Team9789.quizly_Spring.dto.request.quizgroup.*;
 import Team9789.quizly_Spring.entity.QuizType;
 import Team9789.quizly_Spring.entity.UserEntity;
 import Team9789.quizly_Spring.repository.UserRepository;
+import Team9789.quizly_Spring.service.quizgroup.QuizGroupService;
 import jakarta.persistence.EntityManager;
 
 import org.junit.jupiter.api.Assertions;

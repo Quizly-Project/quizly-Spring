@@ -1,11 +1,11 @@
-package Team9789.quizly_Spring.controller.api;
+package Team9789.quizly_Spring.controller.api.quizgroup;
 
 import Team9789.quizly_Spring.dto.QuizGroupDto;
 import Team9789.quizly_Spring.dto.ResultDto;
 import Team9789.quizly_Spring.dto.UserDto;
-import Team9789.quizly_Spring.dto.request.CreateQuizGroupRequest;
-import Team9789.quizly_Spring.dto.request.UpdateQuizGroupRequest;
-import Team9789.quizly_Spring.service.QuizGroupService;
+import Team9789.quizly_Spring.dto.request.quizgroup.CreateQuizGroupRequest;
+import Team9789.quizly_Spring.dto.request.quizgroup.UpdateQuizGroupRequest;
+import Team9789.quizly_Spring.service.quizgroup.QuizGroupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

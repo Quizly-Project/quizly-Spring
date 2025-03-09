@@ -1,4 +1,4 @@
-package Team9789.quizly_Spring.repository.command;
+package Team9789.quizly_Spring.repository.quizgroup;
 
 import Team9789.quizly_Spring.entity.QuizGroup;
 import jakarta.persistence.EntityManager;

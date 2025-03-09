@@ -1,9 +1,6 @@
 package Team9789.quizly_Spring.entity;
 
-import Team9789.quizly_Spring.dto.request.CreateOptionRequest;
-import Team9789.quizly_Spring.dto.request.CreateQuizGroupRequest;
-import Team9789.quizly_Spring.dto.request.CreateQuizRequest;
-import Team9789.quizly_Spring.dto.request.UpdateOptionRequest;
+import Team9789.quizly_Spring.dto.request.quizgroup.CreateOptionRequest;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;

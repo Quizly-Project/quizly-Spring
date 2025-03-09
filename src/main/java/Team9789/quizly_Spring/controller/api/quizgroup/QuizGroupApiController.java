@@ -1,10 +1,9 @@
-package Team9789.quizly_Spring.controller.api;
+package Team9789.quizly_Spring.controller.api.quizgroup;
 
 import Team9789.quizly_Spring.dto.QuizGroupDto;
 import Team9789.quizly_Spring.dto.ResultDto;
-import Team9789.quizly_Spring.dto.request.CreateQuizGroupRequest;
-import Team9789.quizly_Spring.dto.request.UpdateQuizGroupRequest;
-import org.springframework.stereotype.Controller;
+import Team9789.quizly_Spring.dto.request.quizgroup.CreateQuizGroupRequest;
+import Team9789.quizly_Spring.dto.request.quizgroup.UpdateQuizGroupRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 public interface QuizGroupApiController {
 
     ResultDto<List<QuizGroupDto>> findQuizGroupByUsernameV1(

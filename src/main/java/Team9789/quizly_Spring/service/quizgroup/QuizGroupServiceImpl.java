@@ -1,19 +1,19 @@
-package Team9789.quizly_Spring.service;
+package Team9789.quizly_Spring.service.quizgroup;
 
 import Team9789.quizly_Spring.exception.NotEqualsUserException;
 import Team9789.quizly_Spring.dto.QuizGroupDto;
 import Team9789.quizly_Spring.dto.UserDto;
-import Team9789.quizly_Spring.dto.request.CreateQuizGroupRequest;
-import Team9789.quizly_Spring.dto.request.UpdateOptionRequest;
-import Team9789.quizly_Spring.dto.request.UpdateQuizGroupRequest;
-import Team9789.quizly_Spring.dto.request.UpdateQuizRequest;
+import Team9789.quizly_Spring.dto.request.quizgroup.CreateQuizGroupRequest;
+import Team9789.quizly_Spring.dto.request.quizgroup.UpdateOptionRequest;
+import Team9789.quizly_Spring.dto.request.quizgroup.UpdateQuizGroupRequest;
+import Team9789.quizly_Spring.dto.request.quizgroup.UpdateQuizRequest;
 import Team9789.quizly_Spring.entity.Quiz;
 import Team9789.quizly_Spring.entity.QuizGroup;
 import Team9789.quizly_Spring.entity.QuizOption;
 import Team9789.quizly_Spring.entity.UserEntity;
-import Team9789.quizly_Spring.repository.command.QuizGroupCommandRepository;
+import Team9789.quizly_Spring.repository.quizgroup.QuizGroupCommandRepository;
 import Team9789.quizly_Spring.repository.UserRepository;
-import Team9789.quizly_Spring.repository.query.QuizGroupQueryRepository;
+import Team9789.quizly_Spring.repository.quizgroup.QuizGroupQueryRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

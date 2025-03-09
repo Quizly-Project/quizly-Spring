@@ -1,19 +1,15 @@
 package Team9789.quizly_Spring.entity;
 
 
-import Team9789.quizly_Spring.dto.request.CreateQuizRequest;
-import Team9789.quizly_Spring.dto.request.UpdateQuizRequest;
-import io.jsonwebtoken.impl.lang.Function;
+import Team9789.quizly_Spring.dto.request.quizgroup.CreateQuizRequest;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.annotations.BatchSize;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name="quiz_group")
