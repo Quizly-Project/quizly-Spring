@@ -20,6 +20,38 @@ public class QuizOption {
     @JoinColumn(name = "quiz_id")
     private Quiz quiz;
 
-    @Column(name = "option")
-    private String option;
+    @Column(name = "option_text")
+    private String optionText;
+
+    @Column(name = "option_num")
+    private Integer optionNum;
+
+    protected QuizOption(String optionText, Integer optionNum) {
+        this.optionText = optionText;
+        this.optionNum = optionNum;
+    }
+
+    public void changeQuiz(Quiz quiz) {
+        this.quiz = quiz;
+    }
+
+    protected void changeOptionText(String optionText) {
+        this.optionText = optionText;
+    }
+
+    protected void changeOptionNum(Integer optionNum) {
+        this.optionNum = optionNum;
+    }
+
+    //== 생성 메서드 ==//
+    // TODO: quiz null인 상태
+    public static QuizOption createQuizOption(String optionText, Integer optionNum) {
+        return new QuizOption(optionText, optionNum);
+
+    }
+
+    public void updateQuizOption(String optionText, Integer optionNum) {
+        this.changeOptionText(optionText);
+        this.changeOptionNum(optionNum);
+    }
 }

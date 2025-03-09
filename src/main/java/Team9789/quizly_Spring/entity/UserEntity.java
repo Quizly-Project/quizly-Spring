@@ -3,10 +3,12 @@ package Team9789.quizly_Spring.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 
 @Entity
 @Getter
 @Setter
+@BatchSize(size = 100)
 public class UserEntity {
 
     // 유저 아이디

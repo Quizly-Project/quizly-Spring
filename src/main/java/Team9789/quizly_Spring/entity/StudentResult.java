@@ -1,6 +1,5 @@
 package Team9789.quizly_Spring.entity;
 
-import ch.qos.logback.classic.model.RootLoggerModel;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -17,8 +16,7 @@ public class StudentResult {
     @Column(name = "stu_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "rood_id")
+    @OneToOne(mappedBy = "studentResult", fetch = FetchType.LAZY)
     private QuizRoom quizRoom;
 
     @Column(name = "nickname")

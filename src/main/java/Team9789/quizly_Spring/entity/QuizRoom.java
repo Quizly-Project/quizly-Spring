@@ -31,4 +31,8 @@ public class QuizRoom {
 
     @Column(name = "reg_date")
     private LocalDateTime regDate;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "stu_id")
+    private StudentResult studentResult;
 }
